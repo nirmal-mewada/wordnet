@@ -1,3 +1,5 @@
+import org.apache.commons.lang3.StringUtils;
+
 import edu.smu.tspell.wordnet.Synset;
 import edu.smu.tspell.wordnet.WordNetDatabase;
 import edu.smu.tspell.wordnet.impl.file.PropertyNames;
@@ -20,7 +22,7 @@ public class TestJAWS {
 
 		System.setProperty(PropertyNames.DATABASE_DIRECTORY, DB_PATH);
 
-		String wordForm = "test";
+		String wordForm = "fly";
 
 		WordNetDatabase database = WordNetDatabase.getFileInstance();
 		Synset[] synsets = database.getSynsets(wordForm);
@@ -29,16 +31,14 @@ public class TestJAWS {
 		if (synsets.length > 0) {
 			System.out.println("The following synsets contain '" + wordForm	+ "' or a possible base form " + "of that text:");
 			for (int i = 0; i < synsets.length; i++) {
-				System.out.println("");
 				String[] wordForms = synsets[i].getWordForms();
-				for (int j = 0; j < wordForms.length; j++) {
-					System.out.print((j > 0 ? ", " : "") + wordForms[j]);
-				}
-				System.out.println(": " + synsets[i].getDefinition());
+
+				System.out.println((i+1)+". "+StringUtils.join(wordForms,","));
+				System.out.println("   -" + synsets[i].getDefinition());
+				System.out.println();
 			}
 		} else {
-			System.err.println("No synsets exist that contain "
-					+ "the word form '" + wordForm + "'");
+			System.err.println("No synsets exist that contain " + "the word form '" + wordForm + "'");
 		}
 
 	}
