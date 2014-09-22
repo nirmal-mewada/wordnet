@@ -8,7 +8,7 @@ import edu.smu.tspell.wordnet.impl.file.PropertyNames;
 
 public class TestWN {
 
-	public static String DB_PATH = "D:\\Mallet\\QA\\Wordnet\\dict30";
+	public static String DB_PATH = "D:\\WorkSpace_\\nirmal_workspace\\Wordnet\\dict30";
 
 	public static void main(String[] args) {
 		try {

@@ -10,7 +10,7 @@ import edu.smu.tspell.wordnet.impl.file.PropertyNames;
  * java TestJAWS airplane
  */
 public class TestJAWS {
-	public static String DB_PATH = "D:\\Mallet\\QA\\Wordnet\\dict30";
+	public static String DB_PATH = "D:\\WorkSpace_\\nirmal_workspace\\Wordnet\\dict30";
 
 	/**
 	 * Main entry point. The command-line arguments are concatenated together
