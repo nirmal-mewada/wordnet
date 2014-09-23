@@ -104,7 +104,7 @@ public class FileIOHandler {
 			mf.close();
 		}
 	}
-	public void closeClean() {
+	public void reset() {
 		closeAll();
 		lstMappedFiles = null;
 	}
